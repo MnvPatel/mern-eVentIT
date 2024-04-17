@@ -31,7 +31,7 @@ export default function SignInTeacher() {
         return;
       }
       dispatch(signInSuccess(data));
-      navigate('/');
+      navigate('/home');
     } catch (error) {
       dispatch(signInFaliure(data.message));
     }

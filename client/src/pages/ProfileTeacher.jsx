@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux'
 
-export default function Profile() {
+export default function ProfileTeacher() {
   const { currentUser } = useSelector((state) => state.user);
   return (
     <div className='p-3 max-w-lg mx-auto'>
@@ -10,7 +10,6 @@ export default function Profile() {
         <input type='text' placeholder='Username' id='username' className='border p-3 rounded-lg'></input>
         <input type='email' placeholder='Email' id='email' className='border p-3 rounded-lg'></input>
         <input type='text' placeholder='Registration Number' id='RegistrationNumber' className='border p-3 rounded-lg'></input>
-        <input type='text' placeholder='Branch' id='branch' className='border p-3 rounded-lg'></input>
         <input type='text' placeholder='Gender' id='gender' className='border p-3 rounded-lg'></input>
         <input type='date' placeholder='Date of Birth' id='DOB' className='border p-3 rounded-lg'></input>
         <input type='password' placeholder='Password' id='password' className='border p-3 rounded-lg'></input>

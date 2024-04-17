@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
+import HomeTeacher from './pages/HomeTeacher';
 import SignIn from './pages/SignIn';
 import SignInTeacher from './pages/SignInTeacher';
 import SignUp from './pages/SignUp';
@@ -8,12 +9,14 @@ import SignUpTeacher from './pages/SignUpTeacher';
 import About from './pages/About';
 import Profile from './pages/Profile';
 import PrivateRoute from './components/PrivateRoute';
+import ProfileTeacher from './pages/ProfileTeacher';
 
 export default function App() {
   return <BrowserRouter>
   <Header />
   <Routes>
     <Route path = "/" element={<Home />} />
+    <Route path = "/home" element={<HomeTeacher />} />
     <Route path = "/sign-in" element={<SignIn />} />
     <Route path = "/sign-in-T" element={<SignInTeacher />} />
     <Route path = "/sign-up" element={<SignUp />} />
@@ -21,6 +24,7 @@ export default function App() {
     <Route path = "/about" element={<About />} />
     <Route element={<PrivateRoute />} >
       <Route path = "/profile" element={<Profile />} />
+      <Route path = "/profileTeacher" element={<ProfileTeacher />} />
     </Route>
   </Routes>
   </BrowserRouter>

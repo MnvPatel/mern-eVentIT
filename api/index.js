@@ -2,8 +2,10 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import userRouter from './routes/user.route.js'
+import teacherRouter from './routes/teacher.route.js'
 import authRouter from './routes/auth.route.js'
 import authTeacherRouter from './routes/authTeacher.route.js'
+import cookieParser from 'cookie-parser';
 dotenv.config();
 
 mongoose.connect(process.env.MONGO).then(()=>{
@@ -16,11 +18,14 @@ const app = express();
 
 app.use(express.json());
 
+app.use(cookieParser());
+
 app.listen(3000, () => {
     console.log('Server os runnig on port 3000');
 });
 
 app.use("/api/user", userRouter);
+app.use("/api/teacher", teacherRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/auth', authTeacherRouter);
 
