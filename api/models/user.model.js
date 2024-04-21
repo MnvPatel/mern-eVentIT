@@ -16,10 +16,6 @@ const userSchema = new mongoose.Schema({
         required: true,
         unique: [true, "Email Address already taken"],
     },
-    branch : {
-        type:String,
-        required: true,
-    },
     gender : {
         type:String,
         required: true
