@@ -6,6 +6,7 @@ import teacherRouter from './routes/teacher.route.js'
 import authRouter from './routes/auth.route.js'
 import authTeacherRouter from './routes/authTeacher.route.js'
 import cookieParser from 'cookie-parser';
+import listingRouter from './routes/listing.route.js'
 dotenv.config();
 
 mongoose.connect(process.env.MONGO).then(()=>{
@@ -28,6 +29,7 @@ app.use("/api/user", userRouter);
 app.use("/api/teacher", teacherRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/auth', authTeacherRouter);
+app.use('/api/listing', listingRouter);
 
 app.use((err, req, res, next) => {
     const statusCode = err.statusCode || 500;
