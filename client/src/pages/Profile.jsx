@@ -38,10 +38,10 @@ export default function Profile() {
         <input type='text' placeholder='Registration Number' defaultValue={currentUser.RegistrationNumber} id='RegistrationNumber' className='border p-3 rounded-lg'></input>
         <input type='text' placeholder='Gender' id='gender' defaultValue={currentUser.gender} className='border p-3 rounded-lg'></input>
         <input type='date' placeholder='Date of Birth' defaultValue={currentUser.DOB} id='DOB' className='border p-3 rounded-lg'></input>
+        <button onClick={handleSignOut} className='bg-slate-700 text-white rounded-lg p-4 uppercase hover:opacity-95 disabled:opacity-80'>
+          Sign Out
+        </button>
       </form>
-      <div className='fkex justify-between mt-5'>
-        <span onClick={handleSignOut} className='text-red-700 cursor-pointer'>Sign Out</span>
-      </div>
     </div>
   )
 }
