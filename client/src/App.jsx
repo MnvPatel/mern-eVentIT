@@ -17,7 +17,6 @@ export default function App() {
   <Header />
   <Routes>
     <Route path = "/" element={<Home />} />
-    <Route path = "/home" element={<HomeTeacher />} />
     <Route path = "/sign-in" element={<SignIn />} />
     <Route path = "/sign-in-T" element={<SignInTeacher />} />
     <Route path = "/sign-up" element={<SignUp />} />
@@ -27,6 +26,7 @@ export default function App() {
       <Route path = "/profile" element={<Profile />} />
       <Route path = "/profileTeacher" element={<ProfileTeacher />} />
       <Route path = "/create-listing" element={<CreateListing />} />
+      <Route path = "/home" element={<HomeTeacher />} />
     </Route>
   </Routes>
   </BrowserRouter>
