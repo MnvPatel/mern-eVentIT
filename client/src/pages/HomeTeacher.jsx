@@ -22,6 +22,22 @@ export default function HomeTeacher() {
     }
   }
 
+  const handleListingDelete = async(listingId) => {
+    try {
+      const res = await fetch(`/api/listing/delete/${listingId}`,{
+        method:'DELETE',
+      });
+      const data = await res.json();
+      if(data.success === false) {
+        console.log(data.message);
+        return;
+      }
+
+      setUserListings((prev) => prev.filter((listing) => listing._id !== listingId));
+    } catch (error) {
+      console.log(error.message)
+    }
+  }
   return (
     <div className='p-6 max-w-lg mx-auto'>
       <Link className='bg-green-700 text-white  p-3 rounded-lg uppercase text-center hover:opacity-95' to={"/create-listing"}>
