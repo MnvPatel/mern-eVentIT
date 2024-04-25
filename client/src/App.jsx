@@ -12,6 +12,7 @@ import PrivateRoute from './components/PrivateRoute';
 import ProfileTeacher from './pages/ProfileTeacher';
 import CreateListing from './pages/CreateListing';
 import UpdateListing from './pages/UpdateListing';
+import Listing from './pages/Listing';
 
 export default function App() {
   return <BrowserRouter>
@@ -23,6 +24,7 @@ export default function App() {
     <Route path = "/sign-up" element={<SignUp />} />
     <Route path = "/sign-up-T" element={<SignUpTeacher />} />
     <Route path = "/about" element={<About />} />
+    <Route path = "/listing/:listingId" element={<Listing />} />
     <Route element={<PrivateRoute />} >
       <Route path = "/profile" element={<Profile />} />
       <Route path = "/profileTeacher" element={<ProfileTeacher />} />
